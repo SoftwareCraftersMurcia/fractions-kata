@@ -35,3 +35,7 @@ Configuración básica para empezar a hacer una kata o aprender a hacer tests en
 [JUnit](https://github.com/junit-team/junit/wiki)
 
 [Mockito](http://site.mockito.org/mockito/docs/current/org/mockito/Mockito.html)
+
+
+# Kata definition
+https://hackmd.io/@evalverde/B1FNjrKuK
