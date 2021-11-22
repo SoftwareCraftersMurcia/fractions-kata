@@ -36,8 +36,6 @@ Configuración básica para empezar a hacer una kata o aprender a hacer tests en
 
 [Mockito](http://site.mockito.org/mockito/docs/current/org/mockito/Mockito.html)
 
-
-# Kata definition
 # Fractions Kata
 
 ![](https://i.imgur.com/6SVdqjG.png)
