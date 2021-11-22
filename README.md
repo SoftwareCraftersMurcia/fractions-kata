@@ -38,4 +38,75 @@ Configuración básica para empezar a hacer una kata o aprender a hacer tests en
 
 
 # Kata definition
-https://hackmd.io/@evalverde/B1FNjrKuK
+# Fractions Kata
+
+![](https://i.imgur.com/6SVdqjG.png)
+
+
+Nuestro programa tomará como entrada de datos una cadena de texto con el siguiente formato
+
+```
+{3/2}+{4/4}/{2/3}
+```
+
+Dado un input como por ejemplo `{3/2}+{4/4}/{2/3}` se espera un output de `3`.
+
+Nuestro software debería haber resuleto las operaciones entre las fracciones dependiendo de la prioridad de la operación o de los parentesis y devolvernos el resultado final de la operación.
+
+
+# Definición de requisitos
+
+## Formato de una fracción
+
+Una fracción empieza por `{` y termina por `}`. El **numerador** está separado del **denominador** por `/`.
+
+Tanto el numerador como el denominador son número enteros que pueden tener un prefijo `-` para definirlos como números negativos.
+
+- Input: `{9/12}`  representa la siguiente fracción `9/12`.
+- Input: `{-9/12}` representa la siguiente fracción `-9/12`.
+- Input: `{9/-12}` representa la siguiente fracción `9/-12`.
+
+## Operadores validos de fracciones
+
+Los operadores validos para esta kata son:
+
+- `+` Suma (addition)
+- `-` Resta (subtraction)
+- `*` Multiplicación (multiplication)
+- `/` División (divide)
+
+Las fracciones tienen que poder realizar el listado de opeaciones anteriores.
+
+Cualquier otro operador, es considerado un operador invalido y no debería poder realizarse ninguna de las operaciones
+
+## Ejemplos de casos de uso
+
+- Suma de fracciones: `{3/2}+{4/4}`
+- Resta de fracciones: `{3/2}-{4/4}`
+- Multiplicación de fracciones: `{3/2}*{4/4}`
+- División de fracciones: `{3/2}/{4/4}`
+
+## Ejemplos de multiples operaciones
+
+Este sería un ejemplo sobre como se resolvería una entrada con multiples operaciones:
+
+```
+{3/2}+{4/4}/{2/3}
+```
+
+👁️ Si la operación no tiene paréntesis tenemos que priorizar, según operadores, en caso de tener paréntesis, primero tienen que resolverse los paréntesis y luego lo que haya fuera.
+
+**Ejemplo de como sería resuelto**
+```
+{3/2}+{4/4}/{2/3}
+```
+**Primer paso**
+```
+{4/4}/{2/3}
+```
+
+**Segundo paso**
+```
+{3/2}+RESULT_FROM_FIRST_OPERATION
+```
+
