@@ -33,4 +33,12 @@ describe("Fraction Kata", function () {
       result: -0.25,
     });
   });
+
+  it("should resolve fraction {1/-4}", function () {
+    const result = parse("{1/-4}");
+    expect(result).toEqual({
+      valid: true,
+      result: -0.25,
+    });
+  });
 });
