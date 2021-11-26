@@ -9,10 +9,20 @@ use PHPUnit\Framework\TestCase;
 
 final class OperationTest extends TestCase
 {
-    public function test_can_create(): void
+    /**
+     * @dataProvider simpleFunctions
+     */
+    public function test_can_create(float $expectedResult, string $operation): void
     {
-        $operation = Operation::fromString('{4/2}');
+        $operation = Operation::fromString($operation);
 
-        self::assertSame(2.0, $operation->result());
+        self::assertSame($expectedResult, $operation->result());
+    }
+
+    public function simpleFunctions()
+    {
+        return [
+            [2.0, '{4/2}'],
+        ];
     }
 }

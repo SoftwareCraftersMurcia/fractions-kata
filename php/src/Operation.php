@@ -6,7 +6,7 @@ namespace Kata;
 
 final class Operation
 {
-    public static function fromString(string $string): self
+    public static function fromString(string $operation): self
     {
         return new self();
     }
