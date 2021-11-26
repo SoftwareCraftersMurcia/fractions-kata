@@ -19,4 +19,13 @@ class FractionTest extends TestCase
 
         self::assertInstanceOf(Fraction::class, $fraction);
     }
+
+    public function test_returns_the_value_of_a_single_fraction(): void
+    {
+        $fraction = Fraction::fromString('{1/1}');
+
+        $result = $fraction->result();
+
+        self::assertEquals(1, $result);
+    }
 }

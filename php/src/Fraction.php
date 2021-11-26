@@ -12,4 +12,9 @@ class Fraction
 
         return new self();
     }
+
+    public function result(): float
+    {
+        return 1;
+    }
 }
