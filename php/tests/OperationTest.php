@@ -22,5 +22,6 @@ final class OperationTest extends TestCase
     public function simpleFunctions(): iterable
     {
         yield [2.0, '{4/2}'];
+        yield [1.0, '{2/2}'];
     }
 }
