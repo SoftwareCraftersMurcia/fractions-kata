@@ -34,8 +34,10 @@ final class Operation
     public function result(): float
     {
         $result = 0;
-        foreach ($this->fractions as $fraction) {
-            $result += $fraction->result();
+        foreach ($this->fractions as $i => $fraction) {
+            $mathOperation = $this->operations[$i] ?? '+';
+
+            $result = eval("return $result $mathOperation {$fraction->result()};");
         }
 
         return $result;
