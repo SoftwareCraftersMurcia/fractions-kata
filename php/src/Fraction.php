@@ -6,6 +6,10 @@ class Fraction
 {
     public static function fromString(string $fraction): self
     {
-        throw new \Exception('invalid fraction');
+        if (false === strpos($fraction, '{')) {
+            throw new \Exception('invalid fraction');
+        }
+
+        return new self();
     }
 }
