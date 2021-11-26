@@ -29,5 +29,6 @@ final class OperationTest extends TestCase
     public function complexFunctions(): iterable
     {
         yield [2.5, '{4/2}+{1/2}'];
+     //   yield [0.5, '{1/1}-{1/2}'];
     }
 }

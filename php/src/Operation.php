@@ -8,15 +8,19 @@ final class Operation
 {
     /** @var list<Fraction> */
     private array $fractions;
+    private string $operations;
 
-    public function __construct(Fraction ...$fractions)
+    public function __construct(string $operations, Fraction ...$fractions)
     {
+        $this->operations = $operations;
         $this->fractions = $fractions;
     }
 
     public static function fromString(string $operation): self
     {
         $fractionsString = explode('+', $operation);
+        $operations = str_replace($fractionsString, '', $operation);
+
 
         /** @var list<Fraction> $fractions */
         $fractions = array_map(
@@ -24,7 +28,7 @@ final class Operation
             $fractionsString
         );
 
-        return new self(...$fractions);
+        return new self($operations, ...$fractions);
     }
 
     public function result(): float
