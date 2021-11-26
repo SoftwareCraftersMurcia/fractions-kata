@@ -19,10 +19,8 @@ final class OperationTest extends TestCase
         self::assertSame($expectedResult, $operation->result());
     }
 
-    public function simpleFunctions()
+    public function simpleFunctions(): iterable
     {
-        return [
-            [2.0, '{4/2}'],
-        ];
+        yield [2.0, '{4/2}'];
     }
 }
