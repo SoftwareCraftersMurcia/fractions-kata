@@ -107,4 +107,37 @@ Este sería un ejemplo sobre como se resolvería una entrada con multiples opera
 ```
 {3/2}+RESULT_FROM_FIRST_OPERATION
 ```
+## Los comandos que nos llegan podrían ser invalidos
+ejemplos:
+
+```
+'' // Fracción vacía
+{
+}
+{}
+({})
+({a/a})
+{a/a}
+{a3/a3}
+{3a/3a}
+{03/3a}
+{a3/03}
+{a3/0}
+{0/0a}
+{0/a0}
+{0/0}
+{0/3}
+{-3/0}
+{-1/-2}
+{-01/-02}
+ { 1 / -2 }
+ {1/-2} {1/-2} 
+{1/-2}{1/-2}
+{1/-2} {1/-2}
+1/-2
+1/2
+12
+{1/-3-3}
+{-1-1/3}
+```
 
