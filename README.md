@@ -107,8 +107,8 @@ Este sería un ejemplo sobre como se resolvería una entrada con multiples opera
 ```
 {3/2}+RESULT_FROM_FIRST_OPERATION
 ```
-## Los comandos que nos llegan podrían ser invalidos
-ejemplos:
+## El comando o las fracciones pueden ser erroneos
+Los comandos que nos encontremos pueden ser invalidos, en estos casos no se procesaría la fracción
 
 ```
 '' // Fracción vacía
@@ -139,5 +139,6 @@ ejemplos:
 12
 {1/-3-3}
 {-1-1/3}
+{}+{}
 ```
 
