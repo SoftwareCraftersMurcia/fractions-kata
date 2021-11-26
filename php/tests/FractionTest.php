@@ -28,4 +28,15 @@ class FractionTest extends TestCase
 
         self::assertEquals(1, $result);
     }
+
+    public function test_returns_the_value_of_another_fraction(): void
+    {
+        $fraction = Fraction::fromString('{1/2}');
+
+        $result = $fraction->result();
+
+        self::assertEquals(0.5, $result);
+    }
+
+
 }

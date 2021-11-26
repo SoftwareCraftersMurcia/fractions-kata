@@ -4,17 +4,29 @@ namespace Kata;
 
 class Fraction
 {
+    private int $numerator;
+    private int $denominator;
+
+    public function __construct(int $numerator, int $denominator)
+    {
+        $this->numerator = $numerator;
+        $this->denominator = $denominator;
+    }
+
     public static function fromString(string $fraction): self
     {
         if (false === strpos($fraction, '{')) {
             throw new \Exception('invalid fraction');
         }
 
-        return new self();
+        $fraction = str_replace(['{','}'], '', $fraction);
+        [$numerator, $denominator] = explode('/', $fraction);
+
+        return new self((int)$numerator, (int)$denominator);
     }
 
     public function result(): float
     {
-        return 1;
+        return $this->numerator / $this->denominator;
     }
 }
