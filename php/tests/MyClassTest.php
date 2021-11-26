@@ -2,18 +2,14 @@
 
 namespace KataTests;
 
-use Kata\TheClass;
+use Kata\Fraction;
 use PHPUnit\Framework\TestCase;
 
 class MyClassTest extends TestCase
 {
-    /** @test */
-    public function give_me_a_good_name_please(): void
+    public function test_thorws_exception_when_does_not_start_with_curly_bracket(): void
     {
-        $xxx = new TheClass();
-
-        $result = $xxx->theMethod();
-
-        self::assertEquals(true, $result);
+        $this->expectExceptionMessage('invalid fraction');
+        Fraction::fromString('1/1}');
     }
 }
