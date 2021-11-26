@@ -5,7 +5,7 @@ namespace KataTests;
 use Kata\Fraction;
 use PHPUnit\Framework\TestCase;
 
-class MyClassTest extends TestCase
+class FractionTest extends TestCase
 {
     public function test_throws_exception_when_does_not_start_with_curly_bracket(): void
     {
