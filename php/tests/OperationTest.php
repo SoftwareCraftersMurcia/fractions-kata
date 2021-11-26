@@ -11,6 +11,7 @@ final class OperationTest extends TestCase
 {
     /**
      * @dataProvider simpleFunctions
+     * @dataProvider complexFunctions
      */
     public function test_can_run_operations(float $expectedResult, string $operation): void
     {
@@ -23,5 +24,10 @@ final class OperationTest extends TestCase
     {
         yield [2.0, '{4/2}'];
         yield [1.0, '{2/2}'];
+    }
+
+    public function complexFunctions(): iterable
+    {
+        yield [2.5, '{4/2}+{1/2}'];
     }
 }

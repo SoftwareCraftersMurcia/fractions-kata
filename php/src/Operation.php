@@ -6,7 +6,7 @@ namespace Kata;
 
 final class Operation
 {
-    /** @var list<Fraction>  */
+    /** @var list<Fraction> */
     private array $fractions;
 
     public function __construct(Fraction ...$fractions)
@@ -16,11 +16,24 @@ final class Operation
 
     public static function fromString(string $operation): self
     {
-        return new self(Fraction::fromString($operation));
+        $fractionsString = explode('+', $operation);
+
+        /** @var list<Fraction> $fractions */
+        $fractions = array_map(
+            fn(string $f) => Fraction::fromString($f),
+            $fractionsString
+        );
+
+        return new self(...$fractions);
     }
 
     public function result(): float
     {
-        return $this->fractions[0]->result();
+        $result = 0;
+        foreach ($this->fractions as $fraction) {
+            $result += $fraction->result();
+        }
+
+        return $result;
     }
 }
