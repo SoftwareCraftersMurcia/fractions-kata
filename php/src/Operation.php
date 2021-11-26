@@ -18,9 +18,10 @@ final class Operation
 
     public static function fromString(string $operation): self
     {
-        $fractionsString = explode('+', $operation);
-        $operations = str_replace($fractionsString, '', $operation);
+        $fractionsString = preg_split('/[\+-]/', $operation);
 
+        $operations = str_replace($fractionsString, '', $operation);
+        $operations = '+'.$operations;
 
         /** @var list<Fraction> $fractions */
         $fractions = array_map(
