@@ -12,7 +12,7 @@ final class OperationTest extends TestCase
     /**
      * @dataProvider simpleFunctions
      */
-    public function test_can_create(float $expectedResult, string $operation): void
+    public function test_can_run_operations(float $expectedResult, string $operation): void
     {
         $operation = Operation::fromString($operation);
 

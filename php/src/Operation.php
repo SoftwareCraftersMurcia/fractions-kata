@@ -6,13 +6,14 @@ namespace Kata;
 
 final class Operation
 {
-    private Fraction $fraction;
+    /** @var list<Fraction>  */
+    private array $fractions;
 
-    public function __construct(Fraction $fraction)
+    public function __construct(Fraction ...$fractions)
     {
-
-        $this->fraction = $fraction;
+        $this->fractions = $fractions;
     }
+
     public static function fromString(string $operation): self
     {
         return new self(Fraction::fromString($operation));
@@ -20,6 +21,6 @@ final class Operation
 
     public function result(): float
     {
-        return $this->fraction->result();
+        return $this->fractions[0]->result();
     }
 }
